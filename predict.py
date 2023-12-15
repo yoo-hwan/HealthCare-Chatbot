@@ -1,14 +1,12 @@
 import torch
 from transformers import PreTrainedTokenizerFast, GPT2LMHeadModel
 
-# Define your special tokens and tokenizer
 Q_TKN = "<usr>"
 A_TKN = "<sys>"
 SENT = "<unused1>"
 EOS = "</s>"
 BOS = "</s>"
 
-# Initialize your tokenizer
 koGPT2_TOKENIZER = PreTrainedTokenizerFast.from_pretrained(
     "skt/kogpt2-base-v2",
     bos_token=BOS,
@@ -18,14 +16,13 @@ koGPT2_TOKENIZER = PreTrainedTokenizerFast.from_pretrained(
     mask_token="<unused0>",
 )
 
-# Load your trained model
-model_path = "saved_models/chatbot_model.pth"  # Adjust the path to your saved model
+model_path = "saved_models/chatbot_model.pth" 
 model = GPT2LMHeadModel.from_pretrained("skt/kogpt2-base-v2")
 checkpoint = torch.load(model_path)
 model.load_state_dict(checkpoint["model_state_dict"])
 model.eval()
 
-# Interaction loop with the chatbot
+
 with torch.no_grad():
     while 1:
         q = input("user > ").strip()
