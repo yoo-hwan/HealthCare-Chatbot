@@ -1,0 +1,2 @@
+/content/drive/MyDrive/Colab[[:space:]]Notebooks/KoGPT2-chatbot/HealthCare-Chatbot/medical_conversation.csv filter=lfs diff=lfs merge=lfs -text
+/content/drive/MyDrive/Colab[[:space:]]Notebooks/KoGPT2-chatbot/HealthCare-Chatbot/medical_conversation.json filter=lfs diff=lfs merge=lfs -text
